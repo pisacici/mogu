@@ -1,0 +1,83 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/mogu/Public/common/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/mogu/Public/home/css/common.css">
+    <script src="/mogu/Public/common/bootstrap-3.3.7/js/jquery-1.11.1.min.js"></script>
+    <script src="/mogu/Public/common/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="/mogu/Public/common/angular/angular.min.js"></script>
+</head>
+<body >
+<div class="page_login blur" >
+</div>
+<div class="login login_form" id="login_form">
+
+    <h4 class="text-center">蘑菇街后台登录</h4>
+    <form ng-submit="get_val();" name="myForm" ng-app="myApp" ng-controller="validateCtrl" method="post"  novalidate>
+        <div class="form-group">
+            <label>用户名</label>
+            <input type="text" class="form-control" id="login" name="manager_name" required ng-model='data_manager.manager_name' >
+
+            <span style="color:red" ng-show="myForm.manager_name.$dirty">
+                <span ng-show="myForm.manager_name.$error.required">用户名是必须的。</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label>密码</label>
+
+            <input type="password" class="form-control" id="password" name="manager_password" required ng-model="data_manager.manager_password">
+            <span style="color:red" ng-show="myForm.manager_password.$dirty && myForm.manager_password.$invalid">
+            <span ng-show="myForm.manager_password.$error.required">密码不能为空！</span>
+        </span>
+        </div>
+
+        <div class="form-group">
+            <label>验证码</label>
+
+            <input type="text" ng-model="data_manager.verify" class="form-control" placeholder="请输入验证码" required  name="verify">
+            <span style="color:red" ng-show="myForm.verify.$dirty && myForm.verify.$invalid">
+
+            <span ng-show="myForm.verify.$error.required">验证码不能为空！</span>
+        </span>
+        </div>
+            <div class="form-group">
+            <img src="<?php echo U('manager/verify');?>" alt="" onclick="$(this).attr('src','<?php echo U('manager/verify');?>?'+Math.random())">
+        </div>
+        <button type="submit" ng-disabled=" myForm.manager_name.$invalid || myForm.verify.$invalid || myForm.manager_password.$invalid" class="btn btn-block btn-lg btn-primary">登录</button>
+        <div>{{ message }}</div>
+    </form>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('validateCtrl',function  ($scope,$http) {
+        // $scope.manager_name='adminster';
+        // $scope.hl_bd=function  () {
+        //   return $scope.data_manager.manager_name;
+        // }
+        $scope.get_val = function  () {
+            $http({
+                method  : 'POST',
+                url     : '<?php echo U("manager/ajax_login");?>',
+                data    : $.param($scope.data_manager),  // pass in data as strings
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+                .success(function(data) {
+
+                    if (data.stauts==1) {
+                        location.href='<?php echo U("manager/index");?>';
+                    } else {
+                        console.log(data.message);
+                        // if successful, bind success message to message
+                        $scope.message = data.message;
+                    }
+                });
+        }
+
+    })
+</script>
+</body>
+</html>

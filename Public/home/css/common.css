@@ -1,0 +1,24 @@
+/*公共类*/
+.page_login{
+    background: url("../images/moguhouduan.jpg") no-repeat;
+    background-size: cover;
+    height: 700px;
+    position: relative;
+}
+.blur{
+    filter: blur(10px);
+    -moz-filter:blur(10px);
+    -o-filter:blur(10px);
+    -ms-filter:blur(10px);
+    -webkit-filter:blur(10px);
+}
+/* box-shadow:  投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色;  */
+.login_form{
+    box-shadow: 0px 0px 20px #000;
+    padding: 40px;
+    position: absolute;
+    left: calc(50% - 200px);
+    top:50px;
+    width: 400px;
+    color: #fff;
+}

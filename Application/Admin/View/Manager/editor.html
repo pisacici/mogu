@@ -1,0 +1,32 @@
+<include file="public/header"/>
+<div class="col-md-9 ">
+    <!-- 面包屑导航 -->
+    <ol class="breadcrumb">
+        <li>后台管理</li>
+        <li>修改管理员信息</li>
+    </ol>
+    <!-- 内容列表页面 -->
+    <div class="right_content_box">
+        <div class="row">
+            <a href="javascript:history.go(-1)" class="btn btn-default">返回上一页</a>
+        </div>
+
+        <div class="row add_form_box">
+            <form action="{:U('manager/editor')}" method="post">
+                <div class="form-group">
+                    <label >管理员名称</label>
+                    <input type="text" name="manager_name" class="form-control" value="{$good_info['manager_name']}">
+                </div>
+                <div class="form-group">
+                    <label >管理员密码</label>
+                    <input type="text" name="manager_password" class="form-control" value="{$good_info['manager_password']}">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="manager_id" value="{$good_info['manager_id']}" />
+                    <input type="submit" class="btn btn-success"  value="修改">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<include file="footer"/>

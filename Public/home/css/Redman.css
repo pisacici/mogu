@@ -1,0 +1,215 @@
+*{
+    padding:0 ;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+
+#body_wrap {
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+font-family: Microsoft Yahei,PingFang}
+
+/*标题*/
+#body_wrap .nav-title {
+    height: 21px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    color: #333;
+    width: 1200px;
+padding-left: 76px;
+
+}
+#body_wrap .nav-title a{
+    color: #333333;
+}
+/*标题样式*/
+#body_wrap .nav {
+    max-width: 1200px;
+    min-width: 960px;
+    height: 100%;
+    padding-top: 21px;
+    margin: 0 auto;
+}
+/*红人穿搭样式*/
+#body_wrap .bx-wrapper{
+    max-width: 1200px;
+    margin: 0px auto;
+}
+#body_wrap .bx-wrapper .bx-viewport{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 63px;
+}
+#body_wrap .bx-wrapper .bx-viewport .nav-list{
+    width: 3215%;
+    position: relative;
+    transition-duration: 0.5s;
+    /*transition: all 1s;  //动画效果*/
+    transform: translate3d(0px, 0px, 0px);
+}
+/*动态添加或者移除*/
+#body_wrap .tab-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 111px;
+    height: 63px;
+    background: #fff url(../images/beijingtubiao.png) no-repeat;
+}
+
+#body_wrap .bx-wrapper .bx-viewport .nav-list .nav-item{
+    float: left;
+    list-style: none;
+    position: relative;
+    width: 111px;
+    margin-right: 10px;
+    line-height: 54px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#body_wrap .bx-wrapper .bx-viewport .nav-list .nav-item  .item-mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 111px;
+    height: 54px;
+    border-radius: 6px;
+    background: #fff;
+    opacity: 0;
+    z-index: 999;
+}
+
+#body_wrap .bx-wrapper .bx-viewport .nav-list .nav-item .item-tab{
+    width: 111px;
+    height: 54px;
+    border-radius: 6px;
+}
+.mr10 {
+    margin-right: 10px!important;
+}
+
+/*框框的背景颜色*/
+#body_wrap .c1{ background-color: #deb07a; }
+#body_wrap .c2{ background-color: #cbbb97; }
+#body_wrap .c3 {background-color: #e6beb0;}
+#body_wrap .c4 {background-color: #d3acac;}
+#body_wrap .c5 {background-color: #bfd5d3;}
+#body_wrap .c6 {background-color: #c5bedc;}
+#body_wrap .c7 {background-color: #e7b9a9;}
+#body_wrap .c8 {background-color: #c0ceb0;}
+#body_wrap .c9 {background-color: #dad6a4;}
+#body_wrap .c10 {background-color: #a6a7ba;}
+
+/*前后图标*/
+.bx-wrapper .bx-controls-direction{
+    position: relative;
+}
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: -55px;
+    outline: 0;
+    width: 20px;
+    height: 36px;
+    background-image: none;
+    text-indent: -9999px;
+    z-index: 9999;
+}
+.bx-wrapper .bx-prev {
+    left: 0;
+}
+.bx-wrapper .bx-next {
+    right: 0;
+}
+.bx-wrapper img {
+    max-width: 100%;
+    display: block;
+}
+/*动态添加disabled类，实现前后图标的消失效果*/
+.bx-wrapper .bx-controls-direction a.disabled {
+    display: none;
+}
+
+/*图片样式*/
+
+#body_wrap .pool-wrap {
+    width: 100%;
+    min-height: 600px;
+    overflow: hidden;
+}
+#body_wrap .pool-list {
+    font-size: 0;
+    width: 1210px;
+    margin: 30px auto 0;
+    overflow: hidden;
+}
+#body_wrap .image-wrap {
+    display: block;
+    width: 232px;
+    height: 464px;
+}
+/*整个图片组的样式*/
+#body_wrap .pool-item {
+    float: left;
+    width: 232px;
+    height: 552px;
+    background-color: #fff;
+    border-radius: 6px;
+    margin: 0 5px 12px;
+}
+/*图片下面的样式*/
+
+#body_wrap .detail {
+    width: 100%;
+    height: 88px;
+    padding: 16px 20px 0;
+}
+/*图片的大小*/
+#body_wrap .image-wrap img {
+    width: 232px;
+    height: 464px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+/*头像的大小*/
+#body_wrap .avatar {
+     width: 24px;
+     height: 24px;
+     border-radius: 999px;
+     vertical-align: middle;
+ }
+/*头像下面的商品名称*/
+#body_wrap .content-title {
+    max-width: 100%;
+    height: 21px;
+    line-height: 21px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #333;
+}
+/*头像下面的呢称*/
+#body_wrap .user-name {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 158px;
+    height: 16px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #333;
+}

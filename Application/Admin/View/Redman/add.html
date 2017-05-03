@@ -1,0 +1,30 @@
+<include file="Public/header" />
+	<ol class="breadcrumb">
+		<li>管理红人穿搭</li>
+		<li>添加商品</li>
+	</ol>
+	<a href="{:U('redman/index')}" class="btn btn-default">返回列表</a>
+	<form action="{:U('redman/add')}" method="post" enctype="multipart/form-data">
+		<p>商品名称</p>
+		<input type="text" name="redman_name"><br>
+		<p>父级分类</p>
+		<select name="parent_id">
+			<option value="0">没有父级</option>
+			<volist name="first_menu_list" id="value">
+				<option value="{$value['redman_id']}">{$value['redman_name']}</option>
+			</volist>
+		</select>
+		<p>商品图片</p>
+		<input type="file" class="dropify" name="redman_path"><br>
+		<p>作者名称</p>
+		<input type="text" name="redman_author"><br>
+		<p>作者头像</p>
+		<input type="file" class="dropify" name="redman_thumb"><br>
+		<a href="{:U('redman/add')}"><input type="submit" class="btn" value="添加"></a>
+	</form>
+<include file="Public/footer" />
+	<link rel="stylesheet" href="__PUBLIC__/common/dropify/dropify.min.css">
+	<script src="__PUBLIC__/common/dropify/dropify.min.js"></script>
+	<script>
+		$('.dropify').dropify();
+	</script>

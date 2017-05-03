@@ -1,0 +1,154 @@
+/*工具箱***************************/
+h1,h2,h3,h4,h5,h6,ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+a:hover{
+    text-decoration: none!important;
+    color: #333!important;
+}
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+/*盒子内边距*/
+.user_padding{
+    padding: 15px 40px;
+}
+.loggin_padding{
+    padding: 0 40px;
+}
+.input_w{
+    width:68%;
+    display: inline-block;
+}
+/*输入框样式*/
+.input_sty{
+    width:100%;
+    display: inline-block;
+    height: 40px;
+    border:1px solid #ccc;
+    background: rgba(255,255,255,.1);
+    text-indent: 10px;
+    font-size: 12px;
+}
+/*验证码样式*/
+.auth_code{
+    width:100%;
+    height: 50px;
+}
+.auth-box{
+    /*display: none;*/
+}
+/*标签样式*/
+.error_tip{
+    background: url("../images/error.png") 16px no-repeat #fff ;
+    border: 1px solid #ffd797;
+    height: 30px;
+    line-height: 30px;
+    color: #ff1877;
+    width: 100%;
+    padding-left: 40px;
+    margin-bottom: 9px;
+    display: none;
+}
+.lable_sty{
+    display: inline-block;
+    float: left;
+    width: 30%;
+}
+.form_group{
+    margin: 12px 0;
+}
+/*index样式***************************/
+.user_page{
+    width: 100%;
+    height: 600px;
+}
+.user_logo{
+    padding:15px 0px;
+}
+.user_banner{
+    position: relative;
+    background: url("../images/user_banner.png") no-repeat -250px;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.tab_active{
+    color: #fe617a!important;
+    border-bottom: 2px solid  #fe617a!important;
+}
+/*注册表单***************/
+.user{
+    position: absolute;
+    width: 400px;
+    height: auto;
+    background: rgba(255,255,255,.75);
+    display: block;
+    top:80px;
+    right: 85px;
+    color: #333;
+
+}
+.rg_title{
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+
+}
+.register h3{
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    color: #333;
+}
+/*注册按钮样式*/
+.sub_sty{
+    width:100%;
+    display: inline-block;
+    height: 40px;
+    background: rgba(255,32,66,.75);
+    border-radius: 4px;
+    border:none;
+    color: #fff;
+    font-size: 14px;
+
+}
+.rg_footer{
+    font-size: 12px;
+
+}
+.rg_footer a img{
+    border-radius: 50%;
+}
+.rg_login a{
+    text-decoration: underline!important;
+    color: #666;
+    float: right;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.login_a span{
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.different_app a{
+    margin-left: 55px;
+    text-decoration: none;
+    color: #333;
+}
+
+.different_app a:nth-child(1){
+    margin-left: 0px;
+}
+.tab_on{
+    color: #fe617a!important;
+}

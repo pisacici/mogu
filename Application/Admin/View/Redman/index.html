@@ -1,0 +1,79 @@
+<include file="Public/header" />
+	<ol class="breadcrumb">
+		<li>红人穿搭列表</li>
+	</ol>
+	<a href="{:U('redman/add')}" class="btn btn-success">添加信息</a>
+	<table class="table table-hover">
+		<tr class="table-title">
+			<th>商品ID</th>
+			<th>商品名称</th>
+			<th>父级ID</th>
+			<th>商品图片</th>
+			<th>作者名称</th>
+			<th>作者头像</th>
+			<th>创建时间</th>
+			<th>操作</th>
+		</tr>
+		<if condition="$redman_list neq ''"> 
+			<volist name="redman_list" id="value">
+				<tr class="table-body" data-id="{$value['redman_id']}">
+					<td>{$value['redman_id']}</td>
+					<td data-toggle="ajax_edit" data-colmun="redman_name">{$value['redman_name']}</td>
+					<td data-toggle="ajax_edit" data-colmun="parent_id">{$value['parent_id']}</td>
+					<td data-toggle="ajax_edit" data-colmun="redman_path">{$value['redman_path']}</td>
+					<td data-toggle="ajax_edit" data-colmun="redman_author">{$value['redman_author']}</td>
+					<td data-toggle="ajax_edit" data-colmun="redman_thumb">{$value['redman_thumb']}</td>
+					<td>{$value['create_time']}</td>
+					<td>
+						<a href="{:U('redman/edit',array('id'=>$value['redman_id']))}">修改</a> | 
+						<a href="{:U('redman/delete',array('id'=>$value['redman_id']))}">删除</a>
+					</td>
+				</tr>
+			</volist>
+		</if>
+	</table>
+	<div class="pagination">{$page}</div>
+	<div class="alert alert-success hide" id="msg_box"></div>
+<include file="Public/footer" />
+<!-- <script>
+	$(function(){
+		$('[data-toggle="ajax_edit"]').dblclick(function() {
+			var has_edit=$(this).attr('has_edit');
+			if(has_edit!=1){
+				$(this).attr('has_edit',1);
+				var old_html=$(this).html();
+				$(this).html('{input value="'+old_html+'"}');
+				$(this).find('input').focus();
+			}
+		});
+		$(document).on("blur","input",function(){
+			var key=$(this).parent().parent().attr('data-id');
+			var value=$(this).parent().find('input').val();
+			var colmun=$(this).parent().attr("data-colmun");
+			$.post("lib/redman_ajax.php",{ key,value,colmun },function(data){
+				// var r_obj=JSON.parse(data);
+				// $('#msg_box').html(r_obj.msg);
+			});
+			redata($(this).parent());
+		});
+		$(document).keydown(function(ev) {
+			if(ev.keyCode==13){
+				$('[data-toggle="ajax_edit"][has_edit="1"]').each(function(){
+					var key=$(this).parent().attr('data-id');
+					var value=$(this).find('input').val();
+					var colmun=$(this).attr("data-colmun");
+					$.post("lib/redman_ajax.php", { key,value,colmun }, function(data) {
+						// var r_obj=JSON.parse(data);
+						// $('#msg_box').html(r_obj.msg);
+					});
+					redata($(this));
+				})
+			}
+		});
+		function redata(p_input){
+			var new_html=p_input.find('input').val();
+			p_input.html(new_html);
+			p_input.attr("has_edit","");
+		};
+	});
+</script> -->
